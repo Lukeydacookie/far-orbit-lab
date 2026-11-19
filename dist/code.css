@@ -1,0 +1,31 @@
+.code-page { background: radial-gradient(at 5% 0%, #13303d 0%, #050d12 50%); }
+.code-guide { width: min(1200px, calc(100% - 72px)); margin: 30px auto 70px; }
+.code-intro { max-width: 720px; margin-bottom: 38px; }
+.code-intro h1 { font: 400 clamp(40px, 5vw, 67px)/1.06 var(--serif); margin: 10px 0 15px; }
+.code-intro > p:last-child { color: #b8c9d0; line-height: 1.7; font-size: 14px; max-width: 610px; }
+.source-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 42px; align-items: start; }
+.source-tabs { display: grid; }
+.source-tabs button { background: none; border: 0; border-left: 1px solid #b2c4c343; text-align: left; padding: 12px 15px; color: #a7b9c1; display: grid; gap: 4px; }
+.source-tabs button[aria-pressed=true] { border-left-color: #e9d6b6; background: #96b6c20b; color: #f2e2c6; }
+.source-tabs strong { font-size: 13px; font-weight: 500; }
+.source-tabs small { font: 10px var(--mono); color: #94a9b4; }
+.reading-tip { margin: 24px 15px; color: #a9bec8; font-size: 12px; line-height: 1.7; }
+.source-main { min-width: 0; }
+.source-main > header { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.source-main h2 { font: 400 31px var(--serif); }
+.source-main header a { color: #c2d1d7; font-size: 11px; }
+#file-description { line-height: 1.6; font-size: 14px; color: #c2cdd2; margin: 10px 0 18px; }
+#file-notes { border-left: 1px solid #89afb54f; padding: 0 0 0 15px; margin-bottom: 23px; }
+#file-notes p { line-height: 1.65; font-size: 12px; color: #aabec8; }
+#file-notes p + p { margin-top: 9px; }
+pre { max-height: 650px; overflow: auto; padding: 22px; margin: 0; background: #02080de0; border: 1px solid #9fbbc52e; border-radius: 4px; font: 12px/1.75 var(--mono); color: #d3e4e7; tab-size: 2; }
+.try-edit { max-width: 850px; margin: 45px 0 0 242px; border-top: 1px solid var(--line); padding-top: 25px; }
+.try-edit h2 { font: 400 34px var(--serif); margin-bottom: 15px; }
+.try-edit p { font-size: 13px; color: #b8c8d0; line-height: 1.8; margin-top: 11px; }
+.try-edit code { font: 11px var(--mono); color: #ead3b5; overflow-wrap: anywhere; }
+@media (max-width: 690px) {
+  .code-guide { width: calc(100% - 40px); margin-top: 25px; }
+  .source-layout { grid-template-columns: 1fr; gap: 20px; }.source-tabs { grid-template-columns: repeat(2, 1fr); }
+  .reading-tip { margin: 14px 0 0; }.try-edit { margin-left: 0; }
+  .source-main > header { align-items: baseline; }pre { padding: 13px; font-size: 10px; }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#03090d">
+  <title>Inside Far Orbit — Read the code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./code.css">
+  <script defer src="./source.js"></script>
+</head>
+<body class="code-page">
+  <header class="masthead">
+    <a href="./" class="logo" aria-label="Far Orbit home">FAR ORBIT</a>
+    <nav><a href="./">Back to the game →</a></nav>
+  </header>
+  <main class="code-guide">
+    <header class="code-intro"><p class="eyebrow">INSIDE THE GAME</p><h1>A few files. A whole voyage.</h1>
+      <p>Open a file to see the actual source running this game. Start with the scoring settings, then follow what happens when you press Send.</p>
+    </header>
+    <div class="source-layout">
+      <aside aria-label="Choose a source file">
+        <div class="source-tabs" id="source-tabs"></div>
+        <p class="reading-tip">HTML creates the controls. CSS sets their appearance. JavaScript responds to your actions and animates the scene.</p>
+      </aside>
+      <section class="source-main" aria-labelledby="file-title">
+        <header><h2 id="file-title">scoring.js</h2><a id="download-source" href="./scoring.js" download>Download this file ↓</a></header>
+        <p id="file-description"></p>
+        <div id="file-notes"></div>
+        <pre tabindex="0" aria-label="Source code"><code id="source-text">Loading source…</code></pre>
+      </section>
+    </div>
+    <section class="try-edit">
+      <h2>Make your first change.</h2>
+      <p>Download the <a href="https://far-orbit-daily.cocoabike32.chatgpt.site/far-orbit-source.zip" download>complete project</a>, unzip it, and open the folder in Cursor or VS Code. Open <strong>scoring.js</strong>, change <code>roundSeconds: 25</code> to <code>roundSeconds: 40</code>, then save.</p>
+      <p>To run it on your Mac, open Terminal in the unzipped folder and enter <code>python3 -m http.server 8000 --directory dist</code>. Open <a href="http://localhost:8000">http://localhost:8000</a> and start a practice flight. The new timer lasts 40 seconds.</p>
+      <p>To change a puzzle, open <strong>missions.js</strong>. Use <code>replaceRound(day, signal, round(...))</code> to replace a slot in the daily calendar. Each <code>round(...)</code> defines three clues, a hint, direct answers, close answers, related answers, and optional niche answers. Different answers use <code>|</code>. Alternate names for one answer use <code>/</code>. Update <code>MISSION_REVISION</code> after changing the questions; older results are kept in Stats while the new edition starts fresh.</p>
+    </section>
+  </main>
+</body>
+</html>

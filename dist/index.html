@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#03090d">
+  <meta name="description" content="A daily word voyage. Find the connection, type an unexpected answer, and send your probe farther.">
+  <title>Far Orbit — A daily word voyage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./legacy-missions.js"></script>
+  <script defer src="./missions.js"></script>
+  <script defer src="./scoring.js"></script>
+  <script defer src="./spelling.js"></script>
+  <script defer src="./route.js"></script>
+  <script defer src="./chart.js"></script>
+  <script defer src="./audio.js"></script>
+  <script defer src="./game.js"></script>
+</head>
+<body>
+  <!-- Space is drawn on a canvas. All controls remain accessible HTML. -->
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="scene-shade" aria-hidden="true"></div>
+  <header class="masthead">
+    <a href="./" class="logo" aria-label="Far Orbit home">FAR ORBIT</a>
+    <nav aria-label="Game menu">
+      <button type="button" data-dialog="help">How to play</button>
+      <button type="button" data-dialog="archive">Archive</button>
+      <button type="button" data-dialog="stats">Stats</button>
+      <button type="button" id="sound-toggle" aria-pressed="true">Sound on</button>
+      <a href="./code.html">Code</a>
+    </nav>
+  </header>
+  <main class="voyage">
+    <section class="scene-caption" aria-label="Your journey">
+      <p id="edition"></p>
+      <h1 id="position">Earth</h1>
+      <p class="destination-note" id="destination-note">Your voyage starts here.</p>
+      <button type="button" class="ghost about-world" id="about-world">About Earth →</button>
+      <p id="overview-description" class="sr-only" hidden></p>
+      <aside class="planet-fact" id="planet-fact" aria-label="Planet field note" hidden></aside>
+    </section>
+    <section class="play" aria-label="Daily word puzzle"><div id="game"></div></section>
+  </main>
+  <section class="journey-tracker" aria-label="Journey from Earth">
+    <div class="journey-heading"><span>Journey from Earth</span><span id="journey-progress">0.0 flight units</span></div>
+    <div class="journey-track" id="journey-meter" role="progressbar" aria-label="Current section of the open route" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+      <div id="journey-fill"></div><span class="journey-probe" id="journey-probe" aria-hidden="true">✦</span>
+    </div>
+    <ol id="journey-stops" class="journey-stops" aria-label="Flight checkpoints"></ol>
+    <span class="route-scale">The route keeps going · distances adjusted for play</span>
+  </section>
+  <footer class="flight-footer">
+    <div class="journey-score"><strong id="score-text">0</strong><span>pts</span><span class="score-caption" id="score-caption">Your daily voyage</span></div>
+    <div class="next-world">
+      <span id="date"></span>
+      <button type="button" id="destination-button" data-stop="1">Next destination <strong id="next-destination">Mars →</strong></button>
+    </div>
+  </footer>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <header class="modal-head"><h2 id="dialog-title"></h2><form method="dialog"><button type="submit" class="close" aria-label="Close dialog">×</button></form></header>
+    <div id="dialog-content"></div>
+  </dialog>
+  <p class="sr-only" id="announcement" role="status"></p>
+</body>
+</html>
